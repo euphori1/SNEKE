@@ -6,18 +6,20 @@ pygame.init()
 # Set display window
 WINDOW_WIDTH = 600
 WINDOW_HEIGHT = 600
-display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
+size = (WINDOW_WIDTH, WINDOW_HEIGHT)
+display_surface = pygame.display.set_mode(size)
 pygame.display.set_caption("~~SNEKE~~")
 
 # Set FSP and clock
 FPS = 20
 clock = pygame.time.Clock()
-
+# TODO make a variable called FPS and initialize to 20
+clock = pygame.time.Clock()
 # Set game values
-
+# TODO : make a variable (constant) named snake_SIZE AND INITIALIZE TO 20
 # Set colors
 GREEN = (0, 255, 0)
-
+#todo 
 # Set fonts
 
 # Set text
@@ -38,7 +40,7 @@ while running:
         # Move the snake
 
     # Add the head coordinate to the first index of the body coordinate list
-    # This will essentilalyl move all of the snakes body by one position in the list
+    # This will essentially move all the snakes body by one position in the list
 
     # Update the x,y position of the snakes head and make a new coordinate
 

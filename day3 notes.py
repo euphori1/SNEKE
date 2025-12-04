@@ -64,11 +64,9 @@ apple_rect = pygame.draw.rect(display_surface, RED, apple_coord)
 # TODO: make a tuple for the head coordinates named head_coord and set to head_x, head_y, SNAKE_SIZE, SNAKE_SIZE
 # TODO: make head_rect in a way similar to apple_rect, but with color GREEN instead.
 
-body_coords = []
 
 # The main game loop
 running = True
-is_paused = False
 while running:
     # Check to see if the user wants to quit
     for event in pygame.event.get():
@@ -76,75 +74,15 @@ while running:
             running = False
 
         # Move the snake
-        # TODO: check if the event.type is pygame.KEYDOWN
-            # Inside the block of the if statement where we checked if the eventy type is KEYDOWN
-            # TODO: check if the event.key is pygame.K_LEFT.
-                # Inside the block of the K_LEFT if statement
-                # TODO: assign -1 * SNAKE_SIZE 'TO' snake_dx.  This moves the snake 1 SNAKE_SIZE to the left.
-                # TODO: assign 0 'TO' snake_dy.  We may have been moving up or down.  This cancels that movement out.
-            # TODO: check if the event.key is pygame.K_RIGHT.
-                # Inside the block of the K_RIGHT if statement.
-                # TODO: assign SNAKE_SIZE 'TO' snake_dx.  This moves the snake 1 SNAKE_SIZE to the right.
-                # TODO: assign 0 'TO' snake_dy.  We may have been moving up or down.  This cancels that movement out.
-            # TODO: check if the event.key is pygame.K_UP.
-                # Inside the block of the K_UP if statement.
-                # TODO: assign 0 'TO' snake_dx.  We may have been moving left or right.  This cancels that movement out.
-                # TODO: assign -1 * SNAKE_SIZE 'TO' snake_dx. This moves the snake 1 SNAKE_SIZE up.
-            # TODO: check if the event.key is pygame.K_DOWN.
-                # Inside the block of the K_DOWN if statement.
-                # TODO: assign 0 'TO' snake_dx.  We may have been moving left or right.  This cancels that movement out.
-                # TODO: assign SNAKE_SIZE 'TO' snake_dx. This moves the snake 1 SNAKE_SIZE down.
-
 
     # Add the head coordinate to the first index of the body coordinate list
     # This will essentially move all the snakes body by one position in the list
-    # TODO: call body_coords's insert function passing in the index 0 and head_coord
-    # TODO: call body_coords's pop function passing in no arguments.
 
     # Update the x,y position of the snakes head and make a new coordinate
-    # TODO: add snake_dx 'TO' head_x
-    # TODO: add snake_dy 'TO' head_y
-    # TODO: reassign (head_x, head_y, SNAKE_SIZE, SNAKE_SIZE) 'TO' head_coord
 
     # Check for game over
-    if head_rect.left < 0 or head_rect.right > WINDOW_WIDTH or head_rect.top < 0 or head_rect.bottom > WINDOW_HEIGHT or head_coord in body_coords:
-        # TODO: call display_surface's blit function passing in game_over_text and game_over_rect
-        # TODO: repeat for continue
-        # TODO: call pygame.display_update()
-
-        #Pause the game until the player presses a key, then reset the game
-        # TODO: assign True to is_paused
-
-        pass # TODO: remove this line.
-
-    # Check for unpause.  If so reset game.
-    while is_paused:
-        for event in pygame.event.get():
-            # The player wants to quit
-            if event.type == pygame.QUIT:
-                is_paused = False
-                running = False
-            # The player wishes to continue.
-            # TODO: check if the event type is KEYDOWN
-                # resets the game
-                # TODO: assign 0 to score
-                # TODO: assign the default values to head_x, head_y, head_coord, body_coords, snake_dx, snake_dy
-                # TODO: assign False to is_paused
-        pass # TODO: remove this line.
-
 
     # Check for collisions
-    if head_rect.colliderect(apple_rect):
-        # TODO: add one to the score
-        # TODO: call pick_up_sound's play method passing in no argument.
-
-        # TODO: assign random.randint(0, WINDOW_WIDTH - SNAKE_SIZE) to apple_x
-        # TODO: repeat for apply_y but with the WINDOW_HEIGHT
-        # TODO: assign (apple_x, apple_y, SNAKE_SIZE, SNAKE_SIZE) to apple_coord
-
-        # TODO: call body_coords' append method and pass in head_coord for it's argument
-        pass # TODO: remove this line.
-
 
     # Update HUD
     # TODO: reassign to score_text much like you did previously, but now the text should be an f-string: f"Score: {score}"
@@ -171,16 +109,6 @@ while running:
     "We've just told the title and score to display.  
     '''
 
-    # TODO: Read below.  3 TODO's, require's explanation
-    '''
-    1. for every body in body_coords do the following
-    call pygame.draw.rect and pass in display_surface, DARKGREEN, and body
-    2. assign to head_rect the results from calling pygame.draw.rect passing in display_surface, GREEN, and head_coord.
-    3. assign to apple_rect the results from calling pygame.draw.rect passing in display_surface, RED, and apple_coord  
-    '''
-
-
-
     # Blit assets
     # TODO: Read below.  2 TODO's, require's explanation
     '''
@@ -190,16 +118,12 @@ while running:
     1. "Call pygame.draw.rect and passing in display_surface, GREEN, and head_coord for the head of the snake
     2. "Call pygame.draw.rct again pass in display_surface, RED, and apple_coord for the apple.  
     '''
-    for body in body_coords:
-        pygame.draw.rect(display_surface, DARKGREEN, body)
-    head_rect = pygame.draw.rect(display_surface, GREEN, head_coord)
-    apple_rect = pygame.draw.rect(display_surface, RED, apple_coord)
 
     # Update display and tick clock
     # TODO: Read below. 2 TODO's, require's explanation
     '''
     1. Now we update the display by calling pygame.display's update function passing in no arguments.
-    
+
     2. The while loop we are in is super fast.  We actually need to slow it down to our FPS of 20 seconds.  
     That's what our clock variable will do for us.  What until 20 frames have passed every second.  Then continue.  
     This is ticking the clock.   
@@ -207,4 +131,4 @@ while running:
     '''
 
 # End the game
-pygame.quit()
+pygame.quit()    

@@ -77,28 +77,28 @@ while running:
 
         # Move the snake
         # TODO: check if the event.type is pygame.KEYDOWN
-            # Inside the block of the if statement where we checked if the eventy type is KEYDOWN
-            # TODO: check if the event.key is pygame.K_LEFT.
-                # Inside the block of the K_LEFT if statement
-                # TODO: assign -1 * SNAKE_SIZE 'TO' snake_dx.  This moves the snake 1 SNAKE_SIZE to the left.
-                # TODO: assign 0 'TO' snake_dy.  We may have been moving up or down.  This cancels that movement out.
-            # TODO: check if the event.key is pygame.K_RIGHT.
-                # Inside the block of the K_RIGHT if statement.
-                # TODO: assign SNAKE_SIZE 'TO' snake_dx.  This moves the snake 1 SNAKE_SIZE to the right.
-                # TODO: assign 0 'TO' snake_dy.  We may have been moving up or down.  This cancels that movement out.
-            # TODO: check if the event.key is pygame.K_UP.
-                # Inside the block of the K_UP if statement.
-                # TODO: assign 0 'TO' snake_dx.  We may have been moving left or right.  This cancels that movement out.
-                # TODO: assign -1 * SNAKE_SIZE 'TO' snake_dx. This moves the snake 1 SNAKE_SIZE up.
-            # TODO: check if the event.key is pygame.K_DOWN.
-                # Inside the block of the K_DOWN if statement.
-                # TODO: assign 0 'TO' snake_dx.  We may have been moving left or right.  This cancels that movement out.
-                # TODO: assign SNAKE_SIZE 'TO' snake_dx. This moves the snake 1 SNAKE_SIZE down.
+        # Inside the block of the if statement where we checked if the eventy type is KEYDOWN
+        # TODO: check if the event.key is pygame.K_LEFT.
+        # Inside the block of the K_LEFT if statement
+        # TODO: assign -1 * SNAKE_SIZE 'TO' snake_dx.  This moves the snake 1 SNAKE_SIZE to the left.
+        # TODO: assign 0 'TO' snake_dy.  We may have been moving up or down.  This cancels that movement out.
+        # TODO: check if the event.key is pygame.K_RIGHT.
+        # Inside the block of the K_RIGHT if statement.
+        # TODO: assign SNAKE_SIZE 'TO' snake_dx.  This moves the snake 1 SNAKE_SIZE to the right.
+        # TODO: assign 0 'TO' snake_dy.  We may have been moving up or down.  This cancels that movement out.
+        # TODO: check if the event.key is pygame.K_UP.
+        # Inside the block of the K_UP if statement.
+        # TODO: assign 0 'TO' snake_dx.  We may have been moving left or right.  This cancels that movement out.
+        # TODO: assign -1 * SNAKE_SIZE 'TO' snake_dx. This moves the snake 1 SNAKE_SIZE up.
+        # TODO: check if the event.key is pygame.K_DOWN.
+        # Inside the block of the K_DOWN if statement.
+        # TODO: assign 0 'TO' snake_dx.  We may have been moving left or right.  This cancels that movement out.
+        # TODO: assign SNAKE_SIZE 'TO' snake_dx. This moves the snake 1 SNAKE_SIZE down.
 
 
     # Add the head coordinate to the first index of the body coordinate list
     # This will essentially move all the snakes body by one position in the list
-    # TODO: call body_coords's insert function passing in the index 0 and head_coord
+    # TODO: call body_coords's insert function passing in the index (0) and head_coord
     # TODO: call body_coords's pop function passing in no arguments.
 
     # Update the x,y position of the snakes head and make a new coordinate
@@ -126,10 +126,10 @@ while running:
                 running = False
             # The player wishes to continue.
             # TODO: check if the event type is KEYDOWN
-                # resets the game
-                # TODO: assign 0 to score
-                # TODO: assign the default values to head_x, head_y, head_coord, body_coords, snake_dx, snake_dy
-                # TODO: assign False to is_paused
+            # resets the game
+            # TODO: assign 0 to score
+            # TODO: assign the default values to head_x, head_y, head_coord, body_coords, snake_dx, snake_dy
+            # TODO: assign False to is_paused
         pass # TODO: remove this line.
 
 
@@ -190,16 +190,12 @@ while running:
     1. "Call pygame.draw.rect and passing in display_surface, GREEN, and head_coord for the head of the snake
     2. "Call pygame.draw.rct again pass in display_surface, RED, and apple_coord for the apple.  
     '''
-    for body in body_coords:
-        pygame.draw.rect(display_surface, DARKGREEN, body)
-    head_rect = pygame.draw.rect(display_surface, GREEN, head_coord)
-    apple_rect = pygame.draw.rect(display_surface, RED, apple_coord)
 
     # Update display and tick clock
     # TODO: Read below. 2 TODO's, require's explanation
     '''
     1. Now we update the display by calling pygame.display's update function passing in no arguments.
-    
+
     2. The while loop we are in is super fast.  We actually need to slow it down to our FPS of 20 seconds.  
     That's what our clock variable will do for us.  What until 20 frames have passed every second.  Then continue.  
     This is ticking the clock.   
